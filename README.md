@@ -1,7 +1,8 @@
 # ZCSlimeRefresh
 
-[![效果图](img/01.gif)
+![效果图](img/01.gif)
 
+##以下简单集成步骤：
 
 ```ruby
 pod 'ZCSlimeRefresh'
