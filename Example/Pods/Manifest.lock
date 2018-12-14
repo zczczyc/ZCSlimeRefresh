@@ -1,0 +1,23 @@
+PODS:
+  - Masonry (1.1.0)
+  - ZCSlimeRefresh (0.1.0):
+    - Masonry (~> 1.1.0)
+
+DEPENDENCIES:
+  - ZCSlimeRefresh (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Masonry
+
+EXTERNAL SOURCES:
+  ZCSlimeRefresh:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  ZCSlimeRefresh: 191e70a5e2298b7bf38bbbdc577bc077df3b7933
+
+PODFILE CHECKSUM: 07ebb33195c6f94d17e248d97a3a0b7070cc34f3
+
+COCOAPODS: 1.5.0

@@ -1,0 +1,6 @@
+framework module ZCSlimeRefresh {
+  umbrella header "ZCSlimeRefresh-umbrella.h"
+
+  export *
+  module * { export * }
+}
