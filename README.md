@@ -8,7 +8,9 @@
 pod 'ZCSlimeRefresh'
 ```
 ```<ZCRefreshDelegate>```
+
 ```#import "ZCRefreshView.h"```
+
 ```@property (nonatomic, strong) ZCRefreshView *zcRefreshView;```
 ```
 //懒加载水滴下拉框架
