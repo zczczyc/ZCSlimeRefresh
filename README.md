@@ -5,7 +5,7 @@
 ## 以下简单集成步骤：
 
 ```ruby
-pod 'ZCSlimeRefresh'
+pod 'ZCSlimeRefresh', '~> 0.1.0'
 ```
 ```<ZCRefreshDelegate>```
 
