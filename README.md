@@ -1,29 +1,54 @@
 # ZCSlimeRefresh
 
-[![CI Status](https://img.shields.io/travis/zczczyc/ZCSlimeRefresh.svg?style=flat)](https://travis-ci.org/zczczyc/ZCSlimeRefresh)
-[![Version](https://img.shields.io/cocoapods/v/ZCSlimeRefresh.svg?style=flat)](https://cocoapods.org/pods/ZCSlimeRefresh)
-[![License](https://img.shields.io/cocoapods/l/ZCSlimeRefresh.svg?style=flat)](https://cocoapods.org/pods/ZCSlimeRefresh)
-[![Platform](https://img.shields.io/cocoapods/p/ZCSlimeRefresh.svg?style=flat)](https://cocoapods.org/pods/ZCSlimeRefresh)
+[![效果图](img/01.gif)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
-
-## Installation
-
-ZCSlimeRefresh is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'ZCSlimeRefresh'
 ```
+```<ZCRefreshDelegate>```
+```#import "ZCRefreshView.h"```
+```@property (nonatomic, strong) ZCRefreshView *zcRefreshView;```
+```
+//懒加载水滴下拉框架
+- (ZCRefreshView *)zcRefreshView {
+    
+    if (!_zcRefreshView) {
+        _zcRefreshView = [[ZCRefreshView alloc] init];
+        _zcRefreshView.delegate = self;
+        _zcRefreshView.upInset = 0;
+        _zcRefreshView.slimeMissWhenGoingBack = YES;
+        _zcRefreshView.slime.skinColor = [UIColor whiteColor];
+        _zcRefreshView.slime.lineWith = 1;
+        _zcRefreshView.slime.shadowBlur = 4;
+        _zcRefreshView.slime.shadowColor = [UIColor grayColor];
+        _zcRefreshView.slime.bodyColor = [UIColor blackColor];
+    }
+    return _zcRefreshView;
+}
+```
+把水滴框架添加到tableview上
+```[self.tableView addSubview:self.zcRefreshView];```
 
-## Author
+```
+//实现水滴代理
+/**
+ 下拉回调
 
-zczczyc, gitzczyc
+ @param refreshView 水滴block
+ */
+- (void)slimeRefreshStartRefresh:(ZCRefreshView *)refreshView {
+    
+    //刷新当前页面
+    [self testViewArray:self.array];
+}
 
-## License
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.zcRefreshView scrollViewDidScroll];
+}
 
-ZCSlimeRefresh is available under the MIT license. See the LICENSE file for more info.
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    [self.zcRefreshView scrollViewDidEndDraging];
+}
+
+```
