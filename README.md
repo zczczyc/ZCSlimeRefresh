@@ -33,7 +33,10 @@ pod 'ZCSlimeRefresh'
 把水滴框架添加到tableview上
 
 ```
-[self.tableView addSubview:self.zcRefreshView];```
+[self.tableView addSubview:self.zcRefreshView];
+```
+
+
 ```
 //实现水滴代理
 /**
